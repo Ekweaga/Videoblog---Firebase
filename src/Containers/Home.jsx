@@ -7,13 +7,15 @@ import Feed from '../Components/Feed';
 import Create from '../Components/Create';
 import Video from '../Components/Video';
 import Search from '../Components/Search';
+import { categories } from '../Data'
+
 
 function Home({user}) {
   return (
     <>
     <Navbar user={user}/>
     <Flex direction={"column"} justifyContent={"start"} alignItems={'center'} width="20">
-      <Category/>
+      {categories.map((category)=><Category category={category} key={category.id}/>)}
     </Flex>
 
     <Flex width={"full"} alignItems={"center"} justifyContent={"center"} px="4">
