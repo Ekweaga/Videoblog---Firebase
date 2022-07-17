@@ -29,7 +29,7 @@ function Login() {
 
   }
   return (
-  <Flex justifyContent={"center"} alignItems={"center"} width={"100vw"} height={"100vh"} backgroundColor={'black'}>
+  <Flex justifyContent={"center"} alignItems={"center"} width={"100vw"} height={"100vh"} >
     
     <HStack>
     <Button  colorScheme='blue' leftIcon={<FcGoogle />} size='md' variant='outline' onClick={login}>
