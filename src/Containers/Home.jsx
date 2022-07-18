@@ -14,7 +14,9 @@ function Home({user}) {
   return (
     <>
     <Navbar user={user}/>
-    <Flex direction={"column"} justifyContent={"start"} alignItems={'center'} width="20">
+
+    <Flex width="full">
+    <Flex direction={"column"} justifyContent={"start"} alignItems={'center'} width="10">
       {categories.map((category)=><Category category={category} key={category.id}/>)}
     </Flex>
 
@@ -40,7 +42,7 @@ function Home({user}) {
 </Switch>
 
     </Flex>
-    
+    </Flex>
     </>
   )
 }
