@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react'
-import {Flex,Input,Menu,MenuButton,MenuList,MenuItem,Button,Text,Box,FormLabel} from "@chakra-ui/react"
+import {Flex,Input,Menu,MenuButton,MenuList,MenuItem,Button,Text,FormLabel} from "@chakra-ui/react"
 import { categories } from '../Data'
 import {IoCloudUpload, IoTrash} from 'react-icons/io5'
 import Spinner from './Spinner';

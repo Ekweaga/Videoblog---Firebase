@@ -1,5 +1,5 @@
 import React from 'react'
-import {Flex,Box,Button,Text} from "@chakra-ui/react"
+//import {Flex,Box,Button,Text} from "@chakra-ui/react"
 
 function Feed() {
   return (
