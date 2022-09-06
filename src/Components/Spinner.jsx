@@ -10,7 +10,8 @@ function Spinner({msg,progress}) {
   return (
     <Flex flexDirection={"column"} alignItems="center" justifyContent={"center"} height="full">
             <Circles color="#ffff" height={"100"} width="60"/>
-            <Progress mt="4" isAnimated size="sm" value={60} width={"lg"} rounded="sm"/>
+            <Text>{msg}</Text>
+            <Progress mt="4" isAnimated size="sm" value={Number.parseInt(progress)} width={"lg"} rounded="sm"/>
     </Flex>
   )
 }

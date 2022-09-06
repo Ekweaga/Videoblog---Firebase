@@ -1,8 +1,8 @@
 import React from 'react'
-import {Flex, Button, } from "@chakra-ui/react"
+import {Flex } from "@chakra-ui/react"
 import Navbar from '../Components/Navbar'
 import Category from '../Components/Category'
-import {Switch, Route, useHistory} from 'react-router-dom';
+import {Switch, Route} from 'react-router-dom';
 import Feed from '../Components/Feed';
 import Create from '../Components/Create';
 import Video from '../Components/Video';

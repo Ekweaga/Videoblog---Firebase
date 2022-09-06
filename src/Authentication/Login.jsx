@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button, Flex, HStack} from '@chakra-ui/react'
+import {Button, Flex, HStack, Text} from '@chakra-ui/react'
 import{FcGoogle} from 'react-icons/fc'
 import {getAuth, signInWithPopup, GoogleAuthProvider} from 'firebase/auth'
 import {getFirestore} from 'firebase/firestore'
@@ -29,9 +29,12 @@ function Login() {
 
   }
   return (
-  <Flex justifyContent={"center"} alignItems={"center"} width={"100vw"} height={"100vh"} >
-    
-    <HStack>
+  <Flex justifyContent={"center"} alignItems={"center"} width={"100vw"} height={"100vh"} flexDirection="column">
+   <Text fontSize="20px" fontWeight={"600"}>VIYLO</Text>
+    <Text m="5px">
+      Welcome, Login
+    </Text>
+    <HStack mt="10px">
     <Button  colorScheme='blue' leftIcon={<FcGoogle />} size='md' variant='outline' onClick={login}>
 
 SignInWithGoggle
