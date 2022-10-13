@@ -7,10 +7,10 @@ import { getStorage, ref, getDownloadURL, deleteObject, uploadBytesResumable } f
 import { firebaseapp } from '../firebase';
 import { fetchUser} from '../utilis/Fetchuser';
 import {getFirestore} from 'firebase/firestore'
-import { doc, setDoc } from "firebase/firestore"; 
+import { doc, setDoc ,updateDoc,arrayUnion} from "firebase/firestore"; 
 import {useHistory} from "react-router-dom"
 
-function Create() {
+function Create({user}) {
   const [title,settitle] = useState("");
   const [category, setcategory] = useState("Choose a Category")
   const [videoassets, setvideoassets] = useState(null)
@@ -70,6 +70,9 @@ try{
         videourl:videoassets
     }
     await setDoc(doc(firebasedb, "videos", `${Date.now()}`), data)
+    await updateDoc(doc(firebasedb, "specificusers", `${user.email}`), {
+      savedVidoes:arrayUnion(data)
+    })
     setloading(false);
     history.replace("/")
   }
@@ -78,13 +81,13 @@ catch{
 
 }
 }
-  useEffect(()=>{
+  //useEffect(()=>{
 
-  },[title,category])
+ // },[title,category])
 
     return (
    <>
-      <Flex justifyContent="center" alignItems="center" width="80%" padding="" bg="" minHeight="100vh"  borderRadius="md" borderColor="gray.400" border={"1px"}>
+      <Flex justifyContent="center" alignItems="center" width="80%" padding="" bg="" Height="100vh"  borderRadius="md" borderColor="gray.400" border={"1px"}>
 
         <Flex width="80%" flexDirection={"column"}  alignItems={"center"} p="" gap="2"  height="full">
        <Button colorScheme="linkedin" loadingText="Uploading" variant={`${loading ? "outline" : "solid"}`} isLoading={loading} width="xl" onClick={UploadDetails}>Upload</Button>
@@ -124,7 +127,7 @@ catch{
                               <video src={videoassets} controls/>
                               </Flex>)}
             </Flex>
-         <Button colorScheme="linkedin" loadingText="Uploading" variant={`${loading ? "outline" : "solid"}`} isLoading={loading} width="xl" onClick={UploadDetails}>Upload</Button>
+       
         </Flex>
 
     </Flex>

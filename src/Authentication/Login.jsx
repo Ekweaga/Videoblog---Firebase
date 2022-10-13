@@ -23,6 +23,10 @@ function Login() {
 
   await setDoc(
     doc(firebasedb, "users",providerData[0].uid), providerData[0]);
+    await setDoc(
+      doc(firebasedb, "specificusers",providerData[0].email), {
+        savedVideos:[]
+      });
     
     history.replace("");
 

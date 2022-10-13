@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,useEffect} from 'react'
 import {Flex } from "@chakra-ui/react"
 import Navbar from '../Components/Navbar'
 import Category from '../Components/Category'
@@ -10,7 +10,11 @@ import Search from '../Components/Search';
 import { categories } from '../Data'
 
 
+
+
 function Home({user}) {
+
+ 
   return (
     <>
     <Navbar user={user}/>
@@ -30,7 +34,7 @@ function Home({user}) {
     <Feed/>
   </Route>
   <Route path="/create" exact>
-    <Create/>
+    <Create user={user}/>
   </Route>
   <Route path="/videodetail/:videoid" exact>
     <Video/>

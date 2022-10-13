@@ -32,7 +32,7 @@ function App() {
   useEffect(()=>{
       const accessToken = userAccessToken();
       if(!accessToken){
-        history.replace("/login");
+        history.replace("login");
       }
       else{
         const [userInfo] = fetchUser();
@@ -43,10 +43,11 @@ function App() {
   return (
     <div>
       {
-        desktopview ? (<div style={{color:'white',height:'100vh',display:'flex', flexDirection:'column', alignItems:'center',justifyContent:'center',backgroundColor:'#081730',fontSize:'18px'}}><p style={{color:'white'}}>You cannot access on mobile device</p><br/><p>Switch to a desktop or larger screen</p></div>):(
+      
+        
           <div className="App">
           <Switch>
-           <Route path="/" exact>
+           <Route path="" exact>
              <Home user={user}/>
            </Route>
      
@@ -56,7 +57,7 @@ function App() {
           </Switch>
          
          </div>
-        )
+        
       }
    
     </div>
