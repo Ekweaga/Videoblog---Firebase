@@ -3,7 +3,7 @@ import React from 'react'
 function VideoDetail() {
   return (
     <>
-      VideoDetail
+      <div>videodetail</div>VideoDetail
     </>
   )
 }

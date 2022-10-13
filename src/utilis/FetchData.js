@@ -21,3 +21,18 @@ export const getUserInfo = async (firestoreDb,userId)=>{
                 return "No such User in our database"
         }
 }
+
+
+
+export const getVideoInfo = async (firestoreDb,userId)=>{
+        const videoInfo = doc(firestoreDb,"videos", userId);
+        const videoSnap = await getDoc(videoInfo)
+
+        if(videoSnap.exists()){
+                return videoSnap.data();
+        }
+
+        else{
+                return "No such Video in our database"
+        }
+}

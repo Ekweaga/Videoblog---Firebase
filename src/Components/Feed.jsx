@@ -20,7 +20,7 @@ function Feed() {
       setFeeds(data)
     })
 
-    getUserInfo(firestoreDb,)
+    
 
   },[])
 
